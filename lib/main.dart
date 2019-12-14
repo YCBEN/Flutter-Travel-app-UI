@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Travel UI',
       theme: ThemeData(
           primaryColor: Color(0xFF3EBACE),
