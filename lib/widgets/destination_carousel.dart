@@ -98,40 +98,45 @@ class DestinationCarousel extends StatelessWidget {
                             )
                           ]),
                       child: Stack(children: <Widget>[
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: Image(
-                            height: 180,
-                            width: 180.0,
-                            image: AssetImage(destination.imageUrl) ,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                          left: 10.0,
-                          bottom: 10.0,
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(destination.city,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 24.0,
-                                        fontWeight: FontWeight.w600,
-                                        letterSpacing: 1.2)
-                                        ),
-                                Row(children: <Widget>[
-                                  Icon(FontAwesomeIcons.locationArrow, size:10.0, color:Colors.white),
-                                  SizedBox(width: 5.0,),
-                                  Text(destination.country, style: TextStyle(color:  Colors.white),
-                                  )
+                        Hero(
+                          tag: destination.imageUrl,
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image(
+                                height: 180,
+                                width: 180.0,
+                                image: AssetImage(destination.imageUrl) ,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            ),
+                            Positioned(
+                              left: 10.0,
+                              bottom: 10.0,
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(destination.city,
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 24.0,
+                                            fontWeight: FontWeight.w600,
+                                            letterSpacing: 1.2)
+                                            ),
+                                    Row(children: <Widget>[
+                                      Icon(FontAwesomeIcons.locationArrow, size:10.0, color:Colors.white),
+                                      SizedBox(width: 5.0,),
+                                      Text(destination.country, style: TextStyle(color:  Colors.white),
+                                      )
+                                    ],
+                                    )
+                                  
                                 ],
-                                )
-                              
-                            ],
-                          )
-                        )
+                              )
+                          ,)
+                        
                       ]),
+                      
                     )
                   ],
                 ),
